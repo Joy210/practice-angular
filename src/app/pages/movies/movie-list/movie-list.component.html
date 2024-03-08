@@ -1,0 +1,16 @@
+<div class="post-wrapper py-12 space-y-5">
+  <div class="text-white">
+    <p class="text-2xl font-medium">List of Movies</p>
+    <p class="font-light text-slate-500">{{ movies.length }} results found</p>
+  </div>
+
+  <div
+    class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-cols-1 gap-6"
+  >
+    @for(movie of movies; track movie.id){
+    <app-movie-card [movie]="movie" />
+    } @empty {
+    <div class="text-slate-500">There is no content available!</div>
+    }
+  </div>
+</div>

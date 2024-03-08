@@ -1,0 +1,29 @@
+<a
+  href=""
+  class="block relative z-0 bg-slate-900 transform hover:-translate-y-3 ease-in-out duration-300 rounded-lg border border-slate-900 overflow-hidden text-white shadow col-span-2"
+>
+  <div class="img-container overflow-hidden">
+    <img
+      [src]="getFullImgUrl(movie.poster_path)"
+      alt="{{ movie.title }}"
+      class="w-full"
+    />
+  </div>
+
+  <div
+    class="p-5 pt-16 absolute z-50 bottom-0 left-0 w-full bg-gradient-to-t from-slate-950 via-slate-900/90 to-slate-950/0 text-white"
+  >
+    <div class="text-lg capitalize font-medium">
+      {{ movie.title }}
+    </div>
+    <div class="text-sm text-white/70 font-light">
+      Release Date: {{ movie.release_date }}
+    </div>
+
+    <!-- <div class="py-1"></div> -->
+
+    <!-- <div class="text-sm text-white/60">
+      {{ movie.overview.substr(0, 120) + "..." }}
+    </div> -->
+  </div>
+</a>
