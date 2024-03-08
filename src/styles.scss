@@ -17,7 +17,7 @@ body {
 
 .navbar {
   background-color: var(--navbar-scroll);
-  transition: background-color 1s ease;
+  transition: background-color 0.3s ease-in-out;
   color: var(--navbar-scroll-text);
 
   -webkit-box-shadow: var(--navbar-scroll-shadow);

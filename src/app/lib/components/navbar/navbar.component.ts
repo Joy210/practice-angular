@@ -17,19 +17,19 @@ export class NavbarComponent {
     let scrollHeigth;
 
     if (window.innerWidth < 350) {
-      scrollHeigth = 150;
-    } else if (window.innerWidth < 500 && window.innerWidth > 350) {
-      scrollHeigth = 250;
-    } else if (window.innerWidth < 700 && window.innerWidth > 500) {
-      scrollHeigth = 350;
-    } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
-      scrollHeigth = 500;
+      //   scrollHeigth = 100;
+      // } else if (window.innerWidth < 500 && window.innerWidth > 350) {
+      //   scrollHeigth = 200;
+      // } else if (window.innerWidth < 700 && window.innerWidth > 500) {
+      //   scrollHeigth = 300;
+      // } else if (window.innerWidth < 1000 && window.innerWidth > 700) {
+      scrollHeigth = 200;
     } else {
-      scrollHeigth = 650;
+      scrollHeigth = 200;
     }
 
     if (window.scrollY >= scrollHeigth) {
-      document.body.style.setProperty('--navbar-scroll', '#04091f');
+      document.body.style.setProperty('--navbar-scroll', '#0f172a');
       document.body.style.setProperty('--navbar-scroll-text', 'white');
       document.body.style.setProperty(
         '--navbar-scroll-shadow',
