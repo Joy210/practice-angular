@@ -2,11 +2,18 @@ import { Component, inject } from '@angular/core';
 import { MovieDetails, MovieGenre } from '../../../lib/interfaces/movie';
 import { MovieService } from '../../../lib/services/movie/movie.service';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
+import { HeaderComponent, LayoutComponent } from '../../../lib/components';
+import { ContainerComponent } from '../../../lib/components/container/container.component';
 
 @Component({
   selector: 'app-movie-list',
   standalone: true,
-  imports: [MovieCardComponent],
+  imports: [
+    MovieCardComponent,
+    HeaderComponent,
+    LayoutComponent,
+    ContainerComponent,
+  ],
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.scss',
 })

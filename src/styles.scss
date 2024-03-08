@@ -8,3 +8,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  --navbar-scroll: transparent;
+  --navbar-scroll-text: #04091f;
+  --navbar-scroll-shadow: none;
+}
+
+.navbar {
+  background-color: var(--navbar-scroll);
+  transition: background-color 1s ease;
+  color: var(--navbar-scroll-text);
+
+  -webkit-box-shadow: var(--navbar-scroll-shadow);
+  box-shadow: var(--navbar-scroll-shadow);
+}
