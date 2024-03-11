@@ -12,6 +12,8 @@
     <div
       class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-cols-1 gap-6"
     >
+      <!-- <div class="loading" *ngIf="showLoader">Loading...</div> -->
+
       @for(movie of movies; track movie.id){
       <app-movie-card [movie]="movie" />
       } @empty {
@@ -20,3 +22,80 @@
     </div>
   </div>
 </app-container>
+
+<!-- # Modal  -->
+<app-modal *ngIf="generalService.showModal">
+  <!-- {{generalService.modalHeader="Movie Details"}} -->
+  <!-- <div class="loading" *ngIf="showLoader">Loading...</div> -->
+
+  <div class="main-content space-y-4 text-white/80">
+    <img
+      class="rounded-xl"
+      [src]="
+        'https://image.tmdb.org/t/p/original' +
+        generalService.modalContent.backdrop_path
+      "
+      [alt]="generalService.modalContent.title"
+    />
+
+    <div class="highlights">
+      <h2 class="text-xl font-medium">
+        {{ generalService.modalContent.title }}
+      </h2>
+      <p class="font-light">
+        Release Date: {{ generalService.modalContent.release_date }}
+      </p>
+    </div>
+
+    <p>{{ generalService.modalContent.overview }}</p>
+
+    <ul class="ligt-group border border-slate-600 rounded-lg overflow-hidden">
+      <li class="border-b border-slate-600 flex">
+        <span class="border-r border-slate-600 flex-1 px-3 py-2"
+          >Popularity:</span
+        >
+        <span class="border-r border-slate-600 flex-1 px-3 py-2">{{
+          generalService.modalContent.popularity
+        }}</span>
+      </li>
+
+      <li class="border-b border-slate-600 flex">
+        <span class="border-r border-slate-600 flex-1 px-3 py-2"
+          >Vote Average:</span
+        >
+        <span class="border-r border-slate-600 flex-1 px-3 py-2">{{
+          generalService.modalContent.vote_average
+        }}</span>
+      </li>
+
+      <li class="border- border-slate-600 flex">
+        <span class="border-r border-slate-600 flex-1 px-3 py-2"
+          >Vote Count:</span
+        >
+        <span class="border-r border-slate-600 flex-1 px-3 py-2">{{
+          generalService.modalContent.vote_count
+        }}</span>
+      </li>
+    </ul>
+  </div>
+</app-modal>
+
+<!-- {
+    "adult": false,
+    "backdrop_path": "/xOMo8BRK7PfcJv9JCnx7s5hj0PX.jpg",
+    "genre_ids": [
+        878,
+        12
+    ],
+    "id": 693134,
+    "original_language": "en",
+    "original_title": "Dune: Part Two",
+    "overview": "Follow the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a path of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, Paul endeavors to prevent a terrible future only he can foresee.",
+    "popularity": 1383.507,
+    "poster_path": "/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg",
+    "release_date": "2024-02-27",
+    "title": "Dune: Part Two",
+    "video": false,
+    "vote_average": 8.44,
+    "vote_count": 1340
+} -->

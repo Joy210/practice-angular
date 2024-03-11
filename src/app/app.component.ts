@@ -7,6 +7,7 @@ import {
   LayoutComponent,
   NavbarComponent,
 } from './lib/components';
+import { GeneralService } from './lib/services/general.service';
 
 @Component({
   selector: 'app-root',
@@ -24,4 +25,6 @@ import {
 })
 export class AppComponent {
   title = 'practice-angular';
+
+  constructor() {}
 }
