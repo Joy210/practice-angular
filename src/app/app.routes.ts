@@ -8,7 +8,7 @@ export const routes: Routes = [
     component: MovieListComponent,
   },
   {
-    path: 'pipeline',
+    path: 'form',
     component: PipelineComponent,
   },
 

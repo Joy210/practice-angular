@@ -1,7 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ContainerComponent } from '../../lib/components/container/container.component';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pipeline',
@@ -13,11 +13,24 @@ import { CommonModule } from '@angular/common';
 export class PipelineComponent {
   formData: any = {
     firstname: 'Sohanur',
+    middlename: '',
     lastname: 'Rahman',
     email: 'joy@email.com',
   };
 
   fromSubmit = (formData: any) => {
-    console.log(formData);
+    this.formData = {
+      ...this.formData,
+      ...formData.value,
+    };
+
+    console.log(this.formData);
+    return this.formData;
+  };
+
+  getFormData = () => {
+    return JSON.stringify(this.formData)
+      .replace(' ', '&nbsp;')
+      .replace('\n', '<br/>');
   };
 }
