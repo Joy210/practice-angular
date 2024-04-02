@@ -7,7 +7,6 @@ import {
   LayoutComponent,
   NavbarComponent,
 } from './lib/components';
-import { GeneralService } from './lib/services/general.service';
 
 @Component({
   selector: 'app-root',
